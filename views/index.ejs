@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Fibbage Tribute Questions</title>
+        <title>Mixmix Questions</title>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <script src="scripts/jquery-3.3.1.js"></script>
     </head>
@@ -16,7 +16,8 @@
                 </div>
             <% } %>
             <form action="/question/add" method="post">
-                <div class="row">
+                <input type="hidden" name="language" value="en" />
+                <!-- <div class="row">
                     <div class="col-25">
                         <label for="language">Language</label>
                     </div>
@@ -29,7 +30,7 @@
                             <% }) %>
                         </select>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-25">
                         <label for="question">Question</label>

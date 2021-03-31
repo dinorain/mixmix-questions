@@ -1,4 +1,4 @@
-const DEFAULT_LANGUAGE = 'fr';
+const DEFAULT_LANGUAGE = 'en';
 
 NODE_ENV = process.env.NODE_ENV || "dev";
 
@@ -15,11 +15,11 @@ if(process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
     };
 
 } else {
-    var serviceAccount = require("./fibbage-tribute-questions-firebase-adminsdk.json");
+    var serviceAccount = require("./mixmix-questions-firebase-adminsdk.json");
 }
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://fibbage-tribute-questions.firebaseio.com"
+  databaseURL: "https://dustinjourdan.firebaseio.com"
 });
 
 // Get a reference to the database service
@@ -32,9 +32,10 @@ var app = express();
 
 app.use(express.static(__dirname + '/public'));
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
 var randomProperty = function (obj) {
     var keys = Object.keys(obj)
@@ -57,7 +58,7 @@ function getRandomSubset(arr, n) {
 
 function getConfig() {
     return new Promise(resolve => {
-        const url = 'https://fibbage-tribute.herokuapp.com/config.json';
+        const url = NODE_ENV == 'prod' ? 'https://mixmix.herokuapp.com/config.json' : 'http://localhost:8080/config.json'
         console.log(url);
         request.get(url, (error, response, body) => {
             if(error) {
