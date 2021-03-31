@@ -1,5 +1,5 @@
 {
-  "name": "fibbage-tribute-questions",
+  "name": "mixmix-questions",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,8 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "firebase-admin": "^7.0.0"
+    "firebase-admin": "^7.0.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -16,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Minious/fibbage-tribute-questions.git"
+    "url": "git+https://github.com/Minious/mixmix-questions.git"
   },
   "author": "Eliot GODARD",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Minious/fibbage-tribute-questions/issues"
+    "url": "https://github.com/Minious/mixmix-questions/issues"
   },
-  "homepage": "https://github.com/Minious/fibbage-tribute-questions#readme"
+  "homepage": "https://github.com/Minious/mixmix-questions#readme"
 }
